@@ -1,16 +1,17 @@
 (declare-project
-  :name "hey"
+  :name "citadel"
   :description ``` ```
   :version "0.0.0")
 
 (declare-native
-  :name "hey-native"
+  :name "citadel-native"
   :source @["c/module.c"]
-  :cflags ["-D_POSIX_C_SOURCE=200809L"]
+  :cflags ["-D_POSIX_C_SOURCE=200809L"
+           "-D_GNU_SOURCE"]
   :lflags ["-lgdbm"])
 
 (declare-executable
-  :name "hey"
-  :entry "hey/init.janet"
-  :deps ["build/hey-native.so"
-         "build/hey-native.a"])
+  :name "citadel"
+  :entry "citadel/init.janet"
+  :deps ["build/citadel-native.so"
+         "build/citadel-native.a"])

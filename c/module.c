@@ -6,7 +6,7 @@
 #include <gdbm.h>
 #include <string.h>
 
-char* db_path = "db.gbdm";
+char* db_path = "db.gdbm";
 GDBM_FILE gdbf;
 int ex (int argc, char **argv);
 
@@ -17,20 +17,16 @@ datum newDatum(const char* text) {
     return instance;
 }
 
+Janet statusToBool(int status) {
+    return janet_wrap_boolean (!status);
+}
+
 /***************/
 /* C Functions */
 /***************/
 
-JANET_FN(cfun_hello_native,
-         "(hey/hello-native)",
-         "Evaluate to \"Hello!\". but implemented in C.") {
-    janet_fixarity (argc, 0);
-    (void) argv;
-    return janet_cstringv ("Hello!");
-}
-
 JANET_FN(setup,
-         "(hey/setup)",
+         "(citadel/setup)",
          "Set up the gdbm files") {
     int status = 0;
 
@@ -41,12 +37,12 @@ JANET_FN(setup,
         status = -1;
     }
 
-    return janet_wrap_integer(status);
+    return statusToBool (status);
 }
 
 
 JANET_FN(add_element,
-         "(hey/add-element)",
+         "(citadel/add-element)",
          "Create a new element [key content]") {
     janet_fixarity (argc, 2);
     datum key = newDatum (janet_getcstring(argv, 0));
@@ -54,11 +50,11 @@ JANET_FN(add_element,
 
     /* can use replace instead of insert */
     int status = gdbm_store (gdbf, key, content, GDBM_INSERT);
-    return janet_wrap_integer (status);
+    return statusToBool (status);
 }
 
 JANET_FN(read_element,
-         "(hey/read-element)",
+         "(citadel/read-element)",
          "Read element from database (if exists)") {
     int status = 0;
 
@@ -92,11 +88,10 @@ JANET_FN(read_element,
 
 JANET_MODULE_ENTRY(JanetTable *env) {
     JanetRegExt cfuns[] = {
-        JANET_REG("hello-native", cfun_hello_native),
         JANET_REG("setup", setup),
         JANET_REG("add-element", add_element),
         JANET_REG("read-element", read_element),
         JANET_REG_END
     };
-    janet_cfuns_ext(env, "hey", cfuns);
+    janet_cfuns_ext(env, "citadel", cfuns);
 }

@@ -4,4 +4,4 @@ all:
 run:
 	rm -rf build
 	make
-	./build/hey
+	./build/citadel
