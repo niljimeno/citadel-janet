@@ -1,12 +1,5 @@
 (import "./db")
+(import "./router")
 
-(defn hello
-  `Evaluates to "Hello!"`
-  []
-  (print (db/setup))
-  (print (db/add-element "niliara.net" "cool site"))
-  (print (db/read-element "niliara.net")))
-
-(defn main
-  [& args]
-  (hello))
+(and (db/setup)
+     (router/start))
