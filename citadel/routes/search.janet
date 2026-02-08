@@ -1,13 +1,13 @@
 (import "../templates/html")
 (import "../db")
 
-(defn result-block
+(defn- result-block
   [result]
   (let [key (first result)
         content (last result)]
     [:li
      [:h3 key]
-     [:span content]]))
+     [:p content]]))
 
 (defn- page
   [results]
@@ -16,7 +16,7 @@
    [:body
     [:h1 "Citadel"]
     html/search-form
-    [:ul
+    [:ul {:class "results"}
      ;(map result-block results)]]])
 
 (defn route
