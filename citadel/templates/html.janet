@@ -1,8 +1,10 @@
-(def head
+(defn head
+  [&keys {:title title}]
+  (default title "Citadel")
   [:head
    [:link {:rel "stylesheet"
            :href "style.css"}]
-   [:title "Home"]])
+   [:title title]])
 
 (def search-form
   [:form

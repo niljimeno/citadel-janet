@@ -10,7 +10,8 @@
   :name "citadel-native"
   :source @["c/module.c"]
   :cflags ["-D_POSIX_C_SOURCE=200809L"
-           "-D_GNU_SOURCE"]
+           "-D_GNU_SOURCE"
+           "-Wno-discarded-qualifiers"]
   :lflags ["-lgdbm"])
 
 (declare-executable

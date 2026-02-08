@@ -1,3 +1,4 @@
-(use ../hey/init)
+(use ../citadel/db)
 
-(assert (= (hello) "Hello!"))
+(print (do (db/setup)
+         (db/search)))

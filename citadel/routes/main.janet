@@ -1,10 +1,13 @@
 (import "../templates/html")
 
-(defn route
-  {:path "/"}
-  [req path]
+(defn- page
+  []
   [:html {:lang "en"}
-   html/head
+   (html/head)
    [:body
     [:h1 "Citadel"]
     html/search-form]])
+
+(defn route
+  [req path]
+  (page))
