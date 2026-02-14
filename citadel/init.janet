@@ -1,5 +1,8 @@
 (import "./db")
 (import "./router")
 
-(and (db/setup)
-     (router/start))
+
+(defn main
+  [&]
+  (and (db/setup)
+       (router/start)))

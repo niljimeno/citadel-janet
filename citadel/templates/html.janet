@@ -17,6 +17,7 @@
             :value "search"}]])
 
 (def title
-  [:div {:class "title"}
-   [:img {:src "citadel.png"}]
-   [:h1 "Citadel"]])
+  [:a {:href "/"}
+   [:div {:class "title"}
+    [:img {:src "citadel.png"}]
+    [:h1 "Citadel"]]])
