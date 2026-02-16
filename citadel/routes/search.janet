@@ -18,9 +18,10 @@
   [:html {:lang "en"}
    (html/head)
    [:body
-    html/title-search
-    [:div {:class "results"}
-     ;(map result-block results)]]])
+    [:main
+     html/title-search
+     [:div {:class "results"}
+      ;(map result-block results)]]]])
 
 (defn route
   [req path]

@@ -8,31 +8,70 @@
 
 (def- colors
   (let [bg "#0c0810"
+        bg-base "#000"
         fg-comment "#aaaaaa"
         fg-color "#e0a0ff"
+        fg-yellow "#ffff22"
         fg-name "#ffff88"
         fg-url "#22aa22"
         fg "white"]
     [[:body
       [:background-color bg]
       [:color fg]]
-     [:h1
-      [:color fg-color]]
-     [:.title
-      [:margin-top "5em"]]
+     [:a
+      [:color fg-color]
+      [:transition "0.2s"]
+      [:text-decoration "none"]]
+     [:a:hover
+      [:color fg-yellow]]
      [".results, .results tr, .results td"
       [:border-color fg-color]]
      [:.results
       [:.name
-       [:color fg-name]]
+       [:color fg-color]
+       [:transition "0.2s"]]
+      [:.name:hover
+       [:color fg-yellow]]
       [:.url
-       [:color fg-url]]
-      # [:.description
-      #  [:color fg-comment]]
+       [:color fg-url]]]
+     [:form
+      [:input
+       [:background-color bg-base]
+       [:color fg]]]
+     [:.links
+      [:.showall
+       [:span
+        [:color "red"]]]]]))
+
+(def- links
+  (let [links-height "2em"]
+    [:.links
+     [:margin "1em"]
+     [:display "flex"]
+     [:justify-content "center"]
+
+     [:.separator
+      [:user-select "none"]
+      [:margin "0.4em"]]
+
+      [:span
+       [:line-height links-height]
+       [:padding "0 0.4em"]]
+
+     [:.link
+      [:height links-height]
+      [:align-content "center"]
+      [:display "inline-flex"]
+
+      [:.inline-image
+       [:display "inline-block"]
+       [:img
+        [:height "100%"]]]
       ]]))
 
 (def- title
   [:.title
+    [:margin-top "3em"]
    [:h1
     [:font-size "4em"]
     [:text-align "center"]]])
@@ -48,7 +87,9 @@
     [:outline "0"]]
    ["input[type=text]"
     [:width "20em"]
-    [:margin-right "0.4em"]]])
+    [:height "2em"]]
+   ["input[type=submit]"
+    [:display "none"]]])
 
 (def- title-search
   [:.title-search
@@ -74,7 +115,7 @@
    [:.name
     [:margin-bottom "0.2em"]
     [:font-size "1.3em"]
-    [:font-weight "semibold"]
+    [:font-weight "bold"]
     [:text-decoration "none"]]
 
    [:td
@@ -89,18 +130,20 @@
    [:p
     [:margin "0em 0"]]])
 
-# [:li
-#     [:display "block"]
-#     [:border "1px solid black"]
-#     [:padding "0 1em"]
-#     [:max-width "800px"]]
+(def- main
+  [:main
+   [:width "900px"]
+   [:max-width "100%"]
+   [:margin "0 auto"]])
 
 (def css
   "CSS content"
   (css/into-css
    ;global-settings
    ;colors
+   links
    title
+   main
    title-search
    form
    results))

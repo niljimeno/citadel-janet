@@ -15,8 +15,8 @@
 
 (defn icon
   "Icon route"
-  [&]
-  (slurp "citadel.png"))
+  [src &]
+  (slurp src))
 
 (defn add-route
   [server route fun &keys {:mime mime}]
@@ -31,5 +31,6 @@
       (add-route "/read" route-read/route)
       (add-route "/search" route-search/route)
       (add-route "/style.css" style :mime "text/css")
-      (add-route "/citadel.png" icon :mime "image/png")
+      (add-route "/citadel.png" (partial icon "assets/citadel.png") :mime "image/png")
+      (add-route "/showall.webp" (partial icon "assets/showall.webp") :mime "image/png")
       (httpf/listen "0.0.0.0" "8080")))

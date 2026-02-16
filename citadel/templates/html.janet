@@ -21,8 +21,3 @@
    [:a {:href "/"}
     [:h1 "Citadel"]]
    search-form])
-
-(def title
-  [:a {:href "/"}
-   [:div {:class "title"}
-    [:h1 "Citadel"]]])
