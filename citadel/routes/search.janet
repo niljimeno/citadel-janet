@@ -3,21 +3,23 @@
 
 (defn- result-block
   [result]
-  [:tr
-   [:td (get result :name)]
-   [:td (get result :url)]
-   [:td (get result :description)]
-   [:td (-> (get result :tags)
-            (string/join ", "))]])
+  [:div {:class "result"}
+   [:a {:class "name"
+        :href (get result :url)}
+    (get result :name)]
+   [:p {:class "url"} (get result :url)]
+   [:p {:class "description"} (get result :description)]
+   # [:span {:class "tags"} (-> (get result :tags)
+   #                        (string/join ", "))]
+   ])
 
 (defn- page
   [results]
   [:html {:lang "en"}
    (html/head)
    [:body
-    html/title
-    html/search-form
-    [:table {:class "results"}
+    html/title-search
+    [:div {:class "results"}
      ;(map result-block results)]]])
 
 (defn route

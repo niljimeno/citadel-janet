@@ -8,63 +8,86 @@
 
 (def- colors
   (let [bg "#0c0810"
-        fg-color "#e0a0ff"
         fg-comment "#aaaaaa"
+        fg-color "#e0a0ff"
+        fg-name "#ffff88"
+        fg-url "#22aa22"
         fg "white"]
     [[:body
       [:background-color bg]
       [:color fg]]
+     [:h1
+      [:color fg-color]]
      [:.title
-      [:background-color "black"]
-      [:border-color fg-color]
-      [:color fg]]
+      [:margin-top "5em"]]
      [".results, .results tr, .results td"
       [:border-color fg-color]]
-     [".results td:nth-child(2)"
-      [:color fg-comment]]]))
+     [:.results
+      [:.name
+       [:color fg-name]]
+      [:.url
+       [:color fg-url]]
+      # [:.description
+      #  [:color fg-comment]]
+      ]]))
 
 (def- title
   [:.title
-   [:display "flex"]
-   [:justify-content "space-between"]
-
-   [:width "360px"]
-   [:padding "0.2em 1em"]
-   [:margin "4em auto"]
-
-   [:border-width "1px"]
-   [:border-style "solid"]
-
-   [:text-decoration "none"]
-
-   [:img
-    [:width "6em"]
-    [:display "inline-block"]]
-
    [:h1
-    [:font-size "3em"]
-    [:margin-right "1em"]]])
+    [:font-size "4em"]
+    [:text-align "center"]]])
 
 (def- form
   [:form
+   [:width "fit-content"]
    [:margin "0 auto"]
+
+   [:input
+    [:display "inline-block"]]
+   ["input:focus"
+    [:outline "0"]]
+   ["input[type=text]"
+    [:width "20em"]
+    [:margin-right "0.4em"]]])
+
+(def- title-search
+  [:.title-search
    [:display "flex"]
-   [:justify-content "center"]])
+   [:flex-wrap "nowrap"]
+   [:gap "2em"]
+
+   [:form
+    [:align-content "center"]
+    [:margin "0"]]
+
+   [:h1
+    [:margin "0.4em"]]])
 
 (def- results
-  [[:.results
-    [:width "600px"]
-    [:max-width "90%"]
-    [:margin "0 auto"]
+  [:.results
+   [:width "600px"]
+   [:max-width "90%"]
 
-    [:td
-     [:padding "0.2em"]]
+   [:.result
+    [:margin "1em 3em"]]
 
-    ["tr, .results td"
-     [:border-width "1px"]
-     [:border-style "solid"]
-     # [:border-collapse "collapse"]
-     ]]])
+   [:.name
+    [:margin-bottom "0.2em"]
+    [:font-size "1.3em"]
+    [:font-weight "semibold"]
+    [:text-decoration "none"]]
+
+   [:td
+    [:padding "0.2em"]]
+
+   ["tr, .results td"
+    [:border-width "1px"]
+    [:border-style "solid"]
+    # [:border-collapse "collapse"]
+    ]
+
+   [:p
+    [:margin "0em 0"]]])
 
 # [:li
 #     [:display "block"]
@@ -78,5 +101,6 @@
    ;global-settings
    ;colors
    title
+   title-search
    form
-   ;results))
+   results))

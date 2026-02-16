@@ -16,8 +16,13 @@
    [:input {:type "submit"
             :value "search"}]])
 
+(def title-search
+  [:div {:class "title-search"}
+   [:a {:href "/"}
+    [:h1 "Citadel"]]
+   search-form])
+
 (def title
   [:a {:href "/"}
    [:div {:class "title"}
-    [:img {:src "citadel.png"}]
     [:h1 "Citadel"]]])
