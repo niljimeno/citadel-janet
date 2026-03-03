@@ -9,6 +9,7 @@ char* db_path = "db.gdbm";
 GDBM_FILE gdbf;
 int ex (int argc, char **argv);
 
+
 datum newDatum(const char* text) {
     datum instance;
     instance.dptr = text;

@@ -20,7 +20,13 @@
 
 (defn- icon
   [src &]
-  (slurp src))
+  (slurp (string "assets/" src)))
+
+(def resources
+  {"citadel.png" (icon "citadel.png")
+   "showall.webp" (icon "showall.webp")
+   "vim.js" (slurp "js/vim.js")})
+
 
 (defn add-sprite
   [server name]
@@ -28,7 +34,7 @@
   (print (string "assets/" name))
   (add-route server
              (string "/" name)
-             (partial icon (string "assets/" name))
+             (fn [_ &] (get resources name))
              :mime "image/png"))
 
 (defn start
@@ -40,7 +46,7 @@
       (add-route "/search" route-search/route)
       (add-route "/style.css" style :mime "text/css")
       (add-route "/vim.js"
-                 (fn [_ _] (slurp "js/vim.js"))
+                 (fn [_ &] (get resources "vim.js"))
                  :mime "application/javascript")
       (add-sprite "citadel.png")
       (add-sprite "showall.webp")

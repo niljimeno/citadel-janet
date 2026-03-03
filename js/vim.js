@@ -26,9 +26,10 @@ function move(step) {
                 focusCurrent()
         }
     } else {
-        if (searchResults != undefined && searchResults.length != 0) {
-            currentId = 0
-            focusCurrent()
+        if (searchResults != undefined &&
+            searchResults.length != 0) {
+                currentId = 0
+                focusCurrent()
         }
     }
 }
