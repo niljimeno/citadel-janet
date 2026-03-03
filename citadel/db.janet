@@ -26,11 +26,25 @@
              (put :url (first x))
              (put :tags (string/split "," (get $ :tags)))))))
 
-(defn list
+(defn- list
   []
   (->> (citadel-native/search)
        (partition 2)
        (map get-tags)))
+
+(defn- compare
+  [pattern item]
+  (string/find ;(map string/ascii-lower
+                     [pattern (get item :name)])))
+
+(defn search
+  [pattern]
+  (let [all-items (list)]
+    (if (or (nil? pattern)
+            (empty? pattern))
+      all-items
+      (filter (partial compare pattern)
+              all-items))))
 
 (defn setup
   []

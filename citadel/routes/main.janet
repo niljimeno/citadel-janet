@@ -8,7 +8,7 @@
             [:span x]]
            [:span {:class "separator"} "/"]])
         ["plan9" "unix" "philosophy" "janet"])
-   [:a {:href "/search?q=" :class "link showall"}
+   [:a {:href "/search" :class "link showall"}
     [:div {:class "inline-image"}
      [:img {:src "/showall.webp"}]]
     [:span "show all"]]])

@@ -3,10 +3,10 @@
 
 (defn- result-block
   [result]
-  [:div {:class "result"}
-   [:a {:class "name"
-        :href (get result :url)}
-    (get result :name)]
+  [:a {:class "result"
+       :href (get result :url)}
+   [:h3 {:class "name"}
+        (get result :name)]
    [:p {:class "url"} (get result :url)]
    [:p {:class "description"} (get result :description)]
    # [:span {:class "tags"} (-> (get result :tags)
@@ -25,4 +25,6 @@
 
 (defn route
   [req path]
-  (page (db/list)))
+  (-> (get-in req [:query "q"])
+      db/search
+      page))

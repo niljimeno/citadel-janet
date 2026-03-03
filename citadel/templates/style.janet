@@ -18,30 +18,33 @@
     [[:body
       [:background-color bg]
       [:color fg]]
+     ["a:focus, button:focus, input:focus"
+      [:outline "0 !important"]]
      [:a
       [:color fg-color]
-      [:transition "0.2s"]
+      [:transition-property "color"]
+      [:transition-duration "0.2s"]
       [:text-decoration "none"]]
-     [:a:hover
+     ["a:hover, a:focus"
       [:color fg-yellow]]
      [".results, .results tr, .results td"
       [:border-color fg-color]]
      [:.results
-      [:.name
-       [:color fg-color]
-       [:transition "0.2s"]]
-      [:.name:hover
-       [:color fg-yellow]]
       [:.url
-       [:color fg-url]]]
+       [:color fg-url]]
+      [:p
+       [:color fg]]
+      [:span
+       [:color fg]]]
      [:form
       [:input
        [:background-color bg-base]
        [:color fg]]]
      [:.links
       [:.showall
-       [:span
-        [:color "red"]]]]]))
+       [:color "red"]]
+      [".showall:hover"
+       [:text-decoration "underline"]]]]))
 
 (def- links
   (let [links-height "2em"]
@@ -71,7 +74,7 @@
 
 (def- title
   [:.title
-    [:margin-top "3em"]
+    [:margin-top "2em"]
    [:h1
     [:font-size "4em"]
     [:text-align "center"]]])
@@ -83,11 +86,12 @@
 
    [:input
     [:display "inline-block"]]
-   ["input:focus"
-    [:outline "0"]]
+   # ["input:focus"
+   #  [:outline "0"]]
    ["input[type=text]"
     [:width "20em"]
-    [:height "2em"]]
+    [:height "2em"]
+    [:padding "0.2em"]]
    ["input[type=submit]"
     [:display "none"]]])
 
@@ -110,22 +114,20 @@
    [:max-width "90%"]
 
    [:.result
-    [:margin "1em 3em"]]
+    [:display "block"]
+    [:padding "1em 3em"]]
+
+   [".result:hover"
+    [:background-color "black"]]
+   [".result:focus"
+    [:background-color "black"]]
 
    [:.name
     [:margin-bottom "0.2em"]
+    [:margin-top "0.2em"]
     [:font-size "1.3em"]
     [:font-weight "bold"]
     [:text-decoration "none"]]
-
-   [:td
-    [:padding "0.2em"]]
-
-   ["tr, .results td"
-    [:border-width "1px"]
-    [:border-style "solid"]
-    # [:border-collapse "collapse"]
-    ]
 
    [:p
     [:margin "0em 0"]]])

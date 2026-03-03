@@ -13,15 +13,23 @@
   [&]
   style/css)
 
-(defn icon
-  "Icon route"
-  [src &]
-  (slurp src))
-
 (defn add-route
   [server route fun &keys {:mime mime}]
   (httpf/add-route server route "" nil fun
                    ;(if mime [nil mime] [])))
+
+(defn- icon
+  [src &]
+  (slurp src))
+
+(defn add-sprite
+  [server name]
+  (print (string "/" name))
+  (print (string "assets/" name))
+  (add-route server
+             (string "/" name)
+             (partial icon (string "assets/" name))
+             :mime "image/png"))
 
 (defn start
   []
@@ -31,6 +39,9 @@
       (add-route "/read" route-read/route)
       (add-route "/search" route-search/route)
       (add-route "/style.css" style :mime "text/css")
-      (add-route "/citadel.png" (partial icon "assets/citadel.png") :mime "image/png")
-      (add-route "/showall.webp" (partial icon "assets/showall.webp") :mime "image/png")
+      (add-route "/vim.js"
+                 (fn [_ _] (slurp "js/vim.js"))
+                 :mime "application/javascript")
+      (add-sprite "citadel.png")
+      (add-sprite "showall.webp")
       (httpf/listen "0.0.0.0" "8080")))
