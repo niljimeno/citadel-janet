@@ -74,10 +74,16 @@
 
 (def- title
   [:.title
-    [:margin-top "2em"]
-   [:h1
+   [:display "flex"]
+   [:justify-content "center"]
+
+   [:a
     [:font-size "4em"]
-    [:text-align "center"]]])
+    [:text-align "center"]
+    [:font-weight "bold"]]
+
+   [:margin "3em auto"]
+   [:margin-bottom "1em"]])
 
 (def- form
   [:form

@@ -14,9 +14,8 @@
     [:span "show all"]]])
 
 (def title
-  [:a {:href "/"}
-   [:div {:class "title"}
-    [:h1 "Citadel"]]])
+  [:div {:class "title"}
+   [:a {:href "/"} "Citadel"]])
 
 (defn- page
   []

@@ -14,6 +14,7 @@
           :action "/search"
           :accept-charset "utf-8"}
    [:input {:type "text"
+            :placeholder "search"
             :name "q"}]
    [:input {:type "submit"
             :value "search"}]])

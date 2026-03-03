@@ -11,27 +11,29 @@ function getSearchResults() {
 }
 
 function focusCurrent() {
+    if (currentId == undefined) {
+        return
+    }
+
     current = searchResults[currentId]
     current.focus()
 }
 
 function move(step) {
-    console.log(currentId, currentId == undefined, currentId + step, searchResults.length)
-
     if (currentId != undefined) {
         let newId = currentId + step
         if (newId >= 0 &&
             newId < searchResults.length) {
                 currentId = newId
-                focusCurrent()
         }
     } else {
         if (searchResults != undefined &&
             searchResults.length != 0) {
                 currentId = 0
-                focusCurrent()
         }
     }
+
+    focusCurrent()
 }
 
 function moveUp() {
