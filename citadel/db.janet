@@ -34,8 +34,11 @@
 
 (defn- compare
   [pattern item]
-  (string/find ;(map string/ascii-lower
-                     [pattern (get item :name)])))
+  (any? (map (fn [lookup]
+          (string/find
+           ;(map string/ascii-lower
+                 [pattern (get item lookup)])))
+          [:name :url])))
 
 (defn search
   [pattern]

@@ -123,11 +123,13 @@
     [:background-color "black"]]
 
    [:.name
-    [:margin-bottom "0.2em"]
-    [:margin-top "0.2em"]
+    [:margin "0"]
     [:font-size "1.3em"]
     [:font-weight "bold"]
     [:text-decoration "none"]]
+
+   [:.url
+    [:margin-bottom "0.4em"]]
 
    [:p
     [:margin "0em 0"]]])
