@@ -91,16 +91,22 @@ JANET_FN(search,
          "Read element from database (if exists)") {
     int status = 0;
 
-    janet_fixarity (argc, 0);
-    JanetArray* pairs = janet_array(100);
+    janet_fixarity (argc, 1);
+    datum lookingFor = newDatum (janet_getcstring (argv, 0));
+
+    gdbm_count_t count;
+    gdbm_count (gdbf, &count);
+    JanetArray* pairs = janet_array ( count );
 
     datum key = gdbm_firstkey (gdbf);
     while (key.dptr != NULL) {
         datum content = gdbm_fetch (gdbf, key);
+        if (strstr (key.dptr, lookingFor.dptr)) {
+            janet_array_push (pairs, janet_wrap_string (janet_string (key.dptr, key.dsize)));
+            janet_array_push (pairs, janet_wrap_string (janet_string (content.dptr, content.dsize)));
+        }
 
-        janet_array_push(pairs, janet_wrap_string (janet_string (key.dptr, key.dsize)));
-        janet_array_push(pairs, janet_wrap_string (janet_string (content.dptr, content.dsize)));
-
+    next:
         datum nextkey = gdbm_nextkey (gdbf, key);
 
         free (key.dptr);
@@ -119,11 +125,11 @@ JANET_FN(search,
 
 JANET_MODULE_ENTRY(JanetTable *env) {
     JanetRegExt cfuns[] = {
-        JANET_REG("setup", setup),
-        JANET_REG("add-element", add_element),
-        JANET_REG("read-element", read_element),
-        JANET_REG("search", search),
+        JANET_REG ("setup", setup),
+        JANET_REG ("add-element", add_element),
+        JANET_REG ("read-element", read_element),
+        JANET_REG ("search", search),
         JANET_REG_END
     };
-    janet_cfuns_ext(env, "citadel", cfuns);
+    janet_cfuns_ext (env, "citadel", cfuns);
 }

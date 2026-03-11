@@ -1,4 +1,5 @@
 (import citadel-native)
+(import tomlin)
 
 (defn add
   [instance]
@@ -26,12 +27,6 @@
              (put :url (first x))
              (put :tags (string/split "," (get $ :tags)))))))
 
-(defn- list
-  []
-  (->> (citadel-native/search)
-       (partition 2)
-       (map get-tags)))
-
 (defn- compare
   [pattern item]
   (any? (map (fn [lookup]
@@ -42,13 +37,18 @@
 
 (defn search
   [pattern]
-  (let [all-items (list)]
-    (if (or (nil? pattern)
-            (empty? pattern))
-      all-items
-      (filter (partial compare pattern)
-              all-items))))
+  (default pattern "")
+  (->> pattern
+       (citadel-native/search)
+       (partition 2)
+       (map get-tags)))
 
 (defn setup
   []
   (citadel-native/setup))
+
+(defn load-toml
+  [toml]
+  (-> (slurp toml)
+      (tomlin/toml->janet)
+      (print)))
