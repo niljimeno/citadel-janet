@@ -13,7 +13,8 @@
   [:form {:method "get"
           :action "/search"
           :accept-charset "utf-8"}
-   [:input {:type "text"
+   [:input {:id "search"
+            :type "text"
             :placeholder "search"
             :name "q"}]
    [:input {:type "submit"

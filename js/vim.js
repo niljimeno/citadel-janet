@@ -3,6 +3,9 @@ console.log("Vim keybinds are enabled! Use J and K to move through the results")
 let current
 let currentId
 let searchResults = []
+let paused = false
+
+let searchBar
 
 function getSearchResults() {
     return Array.from(
@@ -19,8 +22,22 @@ function focusCurrent() {
     current.focus()
 }
 
+function unfocus() {
+    searchBar.focus()
+    searchBar.blur()
+    searchBar.blur()
+    searchBar.blur()
+    searchBar.blur()
+}
+
 function move(step) {
-    if (currentId != undefined) {
+    if (document.activeElement == searchBar) {
+        return
+    }
+
+    if (paused) {
+        paused = false
+    } else if (currentId != undefined) {
         let newId = currentId + step
         if (newId >= 0 &&
             newId < searchResults.length) {
@@ -45,11 +62,22 @@ function moveDown() {
 }
 
 window.addEventListener('load', (_) => {
+    searchBar = document.getElementById("search")
     searchResults = getSearchResults()
 })
 
-window.addEventListener("keypress", (event) => {
+window.addEventListener("keydown", (event) => {
     switch (event.key) {
+        case "Escape":
+        paused = true
+        unfocus()
+        break
+
+        case "/":
+        event.preventDefault()
+        searchBar.focus()
+        break
+
         case "j":
         moveDown()
         break
