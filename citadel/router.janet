@@ -2,9 +2,9 @@
 (import "./templates/style")
 (import "./templates/html")
 (import "./routes/search" :as route-search)
-(import "./routes/main" :as route-main)
-(import "./routes/read" :as route-read)
-(import "./routes/add" :as route-add)
+(import "./routes/index" :as route-index)
+# (import "./routes/read" :as route-read)
+# (import "./routes/add" :as route-add)
 
 (defn style
   "Style route"
@@ -40,9 +40,7 @@
 (defn start
   []
   (-> (httpf/server)
-      (add-route "/" route-main/route)
-      (add-route "/add" route-add/route)
-      (add-route "/read" route-read/route)
+      (add-route "/" route-index/route)
       (add-route "/search" route-search/route)
       (add-route "/style.css" style :mime "text/css")
       (add-route "/vim.js"

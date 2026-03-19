@@ -101,7 +101,8 @@ JANET_FN(search,
     datum key = gdbm_firstkey (gdbf);
     while (key.dptr != NULL) {
         datum content = gdbm_fetch (gdbf, key);
-        if (strstr (key.dptr, lookingFor.dptr)) {
+        if (strstr (key.dptr, lookingFor.dptr) ||
+            strstr (content.dptr, lookingFor.dptr)) {
             janet_array_push (pairs, janet_wrap_string (janet_string (key.dptr, key.dsize)));
             janet_array_push (pairs, janet_wrap_string (janet_string (content.dptr, content.dsize)));
         }

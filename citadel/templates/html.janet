@@ -1,3 +1,5 @@
+(import ../db)
+
 (defn head
   [&keys {:title title}]
   (default title "Citadel")
@@ -9,7 +11,8 @@
    [:script {:src "/vim.js"}]
    [:title title]])
 
-(def search-form
+(defn search-form
+  []
   [:form {:method "get"
           :action "/search"
           :accept-charset "utf-8"}
@@ -20,8 +23,9 @@
    [:input {:type "submit"
             :value "search"}]])
 
-(def title-search
+(defn title-search
+  []
   [:div {:class "title-search"}
    [:a {:href "/"}
-    [:h1 "Citadel"]]
-   search-form])
+    [:h1 (get db/data :title)]]
+   (search-form)])

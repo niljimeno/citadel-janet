@@ -30,12 +30,11 @@
      [".results, .results tr, .results td"
       [:border-color fg-color]]
      [:.results
+      [:color fg]
       [:.url
        [:color fg-url]]
-      [:p
-       [:color fg]]
-      [:span
-       [:color fg]]]
+      [:.description
+       [:color fg-comment]]]
      [:form
       [:input
        [:background-color bg-base]

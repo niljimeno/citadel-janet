@@ -15,11 +15,12 @@
 
 (defn- page
   [results]
+  (print "Got to results")
   [:html {:lang "en"}
    (html/head)
    [:body
     [:main
-     html/title-search
+     (html/title-search)
      [:div {:class "results"}
       ;(map result-block results)]]]])
 

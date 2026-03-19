@@ -1,6 +1,8 @@
 (import "../templates/html")
+(import "../db")
 
-(def links
+(defn- links
+  []
   [:nav {:class "links"}
    (map (fn [x]
           [:div
@@ -13,18 +15,19 @@
      [:img {:src "/showall.webp"}]]
     [:span "show all"]]])
 
-(def title
+(defn- title
+  []
   [:div {:class "title"}
-   [:a {:href "/"} "Citadel"]])
+   [:a {:href "/"} (get db/data :title)]])
 
 (defn- page
   []
   [:html {:lang "en"}
    (html/head)
    [:body
-    links
-    title
-    html/search-form]])
+    (links)
+    (title)
+    (html/search-form)]])
 
 (defn route
   [req path]

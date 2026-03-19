@@ -1,19 +1,6 @@
-(import citadel-native)
 (import tomlin)
 
-(defn add
-  [instance]
-  (print (instance "url"))
-  (citadel-native/add-element
-   (instance :url)
-   (string/join @[(string (get instance :name))
-                  (string (get instance :description))
-                  (string (get instance :tags))]
-                ";" )))
-
-(defn read
-  [key]
-  (citadel-native/read-element key))
+(var data nil)
 
 (def- tags
   [:name :description :tags])
@@ -29,6 +16,8 @@
 
 (defn- compare
   [pattern item]
+  (default pattern "")
+  (default item "")
   (any? (map (fn [lookup]
           (string/find
            ;(map string/ascii-lower
@@ -38,17 +27,20 @@
 (defn search
   [pattern]
   (default pattern "")
-  (->> pattern
-       (citadel-native/search)
-       (partition 2)
-       (map get-tags)))
+  (let [items (get data :items)]
+    (if (and pattern (-> pattern empty? not))
+      (filter (partial compare pattern) items)
+      items))
+    )
 
-(defn setup
-  []
-  (citadel-native/setup))
-
-(defn load-toml
+(defn load
   [toml]
   (-> (slurp toml)
       (tomlin/toml->janet)
-      (print)))
+      (->> (set data)))
+  (map |(print (get $ :name)) (get data :items))
+  1)
+
+(defn setup
+  []
+  (load "data.toml"))
