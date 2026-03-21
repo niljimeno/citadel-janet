@@ -1,4 +1,7 @@
 (import janet-css/css)
+(import ../db)
+
+(def palette :light)
 
 (def- global-settings
   [[:ul
@@ -6,42 +9,57 @@
   [:img
    [:image-rendering "pixelated"]]])
 
-(def- colors
-  (let [bg "#0c0810"
-        bg-base "#000"
-        fg-comment "#aaaaaa"
-        fg-color "#e0a0ff"
-        fg-yellow "#ffff22"
-        fg-name "#ffff88"
-        fg-url "#22aa22"
-        fg "white"]
+(defn- colors
+  []
+  (let [bg (get db/theme :bg)
+        bg-base (get db/theme :bg-base)
+        fg (get db/theme :fg)
+        fg-comment (get db/theme :fg-comment)
+        fg-colored (get db/theme :fg-colored)
+        fg-highlight (get db/theme :fg-highlight)
+        fg-highlight-b (get db/theme :fg-highlight-b)
+        fg-name (get db/theme :fg-name)
+        fg-url (get db/theme :fg-url)]
     [[:body
       [:background-color bg]
       [:color fg]]
      ["a:focus, button:focus, input:focus"
       [:outline "0 !important"]]
      [:a
-      [:color fg-color]
+      [:color fg-colored]
       [:transition-property "color"]
       [:transition-duration "0.2s"]
       [:text-decoration "none"]]
      ["a:hover, a:focus"
-      [:color fg-yellow]]
+      [:color fg-highlight]
+      [:text-decoration "underline"]]
      [".results, .results tr, .results td"
-      [:border-color fg-color]]
+      [:border-color fg-colored]]
+
      [:.results
       [:color fg]
       [:.url
        [:color fg-url]]
       [:.description
-       [:color fg-comment]]]
+       [:color fg-comment]]
+      [".result:hover"
+       [:background-color bg-base]
+       [:text-decoration "none"]
+       [:.name
+        [:text-decoration "underline"]]]
+      [".result:focus"
+       [:background-color bg-base]
+       [:text-decoration "none"]
+       [:.name
+        [:text-decoration "underline"]]]]
+
      [:form
       [:input
        [:background-color bg-base]
        [:color fg]]]
      [:.links
       [:.showall
-       [:color "red"]]
+       [:color fg-highlight-b]]
       [".showall:hover"
        [:text-decoration "underline"]]]]))
 
@@ -122,11 +140,6 @@
     [:display "block"]
     [:padding "1em 3em"]]
 
-   [".result:hover"
-    [:background-color "black"]]
-   [".result:focus"
-    [:background-color "black"]]
-
    [:.name
     [:margin "0"]
     [:font-size "1.3em"]
@@ -145,11 +158,12 @@
    [:max-width "100%"]
    [:margin "0 auto"]])
 
-(def css
+(defn css
   "CSS content"
+  []
   (css/into-css
    ;global-settings
-   ;colors
+   ;(colors)
    links
    title
    main

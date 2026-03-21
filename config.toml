@@ -1,8 +1,10 @@
 title = "Citadel"
+theme = "lantern"
 
 [[items]]
 name = "Niliara.net"
 url = "https://niliara.net"
+description = "Example description"
 
 [[items]]
 name = "NOPENOPENOPE"

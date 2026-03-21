@@ -1,0 +1,10 @@
+bg = "#0c0810"
+bg-base = "#000"
+
+fg = "white"
+fg-comment = "#aaaaaa"
+fg-colored = "#e0a0ff"
+fg-highlight = "#ffff22"
+fg-highlight-b = "#ff6666"
+fg-name = "#ffff66"
+fg-url = "#22aa22"

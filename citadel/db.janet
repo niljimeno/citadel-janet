@@ -1,6 +1,7 @@
 (import tomlin)
 
 (var data nil)
+(var theme nil)
 
 (def- tags
   [:name :description :tags])
@@ -33,14 +34,12 @@
       items))
     )
 
-(defn load
-  [toml]
-  (-> (slurp toml)
-      (tomlin/toml->janet)
-      (->> (set data)))
-  (map |(print (get $ :name)) (get data :items))
-  1)
-
 (defn setup
   []
-  (load "data.toml"))
+  (-> (slurp "config.toml")
+      (tomlin/toml->janet)
+      (->> (set data)))
+  (-> (slurp (string "themes/" (get data :theme) ".toml"))
+      (tomlin/toml->janet)
+      (->> (set theme)))
+  1)

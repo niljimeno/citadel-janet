@@ -11,7 +11,7 @@
   {:path "/style.css"
    :render-mime "text/css"}
   [&]
-  style/css)
+  (style/css))
 
 (defn add-route
   [server route fun &keys {:mime mime}]
