@@ -33,17 +33,17 @@ name = "Dan's website"
 url = "https://pspodcasting.net/dan"
 tags = ["Art", "Unix", "Plan 9"]
 
-[[sites]]
-name = "Eric S. Raymond's Website"
-url = "https://catb.org/~esr"
-description = "Eric S. Raymond's personal site"
-tags = ["Blog", "Unix"]
+# [[sites]]
+# name = "Eric S. Raymond's Website"
+# url = "https://catb.org/~esr"
+# description = "Eric S. Raymond's personal site"
+# tags = ["Blog", "Unix"]
 
-[[sites]]
-name = "Erlang University"
-url = "https://erlang.org/course"
-description = "Official Erlang introduction course"
-tags = ["Programming"]
+# [[sites]]
+# name = "Erlang University"
+# url = "https://erlang.org/course"
+# description = "Official Erlang introduction course"
+# tags = ["Programming"]
 
 [[sites]]
 name = "Eshan Ramesh"
@@ -59,7 +59,7 @@ tags =  ["Blog", "Personal", "Plan 9"]
 name = "Download Free Kromer"
 url = "https://kromercoin.com"
 description = "Stupid Spamton-themed website from Neocities"
-tags = ["Entertainment"]
+tags = ["Art"]
 
 [[sites]]
 name = "Lainchan"
@@ -204,20 +204,10 @@ description = "Self-hosted darknet search engine"
 tags = ["Search Engine", "Privacy"]
 
 [[sites]]
-name = "Peter's website"
-url = "https://pmikkelsen.com/"
-tags = ["Unix", "Plan 9"]
-
-[[sites]]
 name = "Dan-Simon Myrlands personal blog space"
 url = "https://pspodcasting.net/dan/blog/index.html"
 description = "Author of the Plan 9 Desktop User Guide"
 tags = ["Personal", "Unix", "Plan 9"]
-
-[[sites]]
-name = "Irreal"
-url = "https://irreal.org/blog/"
-tags = ["Lisp"]
 
 [[sites]]
 name = "Michdev"
