@@ -7,13 +7,13 @@ theme = "lantern"
 [[sites]]
 name = "AnalogNowhere"
 url = "https://analognowhere.com"
-description = "Unix-themed fan-fiction"
+description = "Unix-themed fan-fiction."
 tags = ["Art", "Unix", "Plan 9"]
 
 [[sites]]
 name = "Based Cooking"
 url = "https://based.cooking"
-description = "Cooking site that doesn't suck"
+description = "Cooking site that doesn't suck."
 tags = ["Cooking"]
 
 [[sites]]
@@ -25,58 +25,48 @@ tags = ["Unix", "Plan 9"]
 [[sites]]
 name = "Cidoku"
 url = "https://cidoku.net"
-description = "Retro personal webpage"
-tags = ["Art", "Flash", "Music", "Personal"]
+description = "Retro personal webpage."
+tags = ["Art", "Blog", "Flash", "Music"]
 
 [[sites]]
 name = "Dan's website"
+description = "Author of the 'Plan 9 Desktop Guide' blog post."
 url = "https://pspodcasting.net/dan"
-tags = ["Art", "Unix", "Plan 9"]
-
-# [[sites]]
-# name = "Eric S. Raymond's Website"
-# url = "https://catb.org/~esr"
-# description = "Eric S. Raymond's personal site"
-# tags = ["Blog", "Unix"]
-
-# [[sites]]
-# name = "Erlang University"
-# url = "https://erlang.org/course"
-# description = "Official Erlang introduction course"
-# tags = ["Programming"]
+tags = ["Art", "Blog", "Unix", "Plan 9"]
 
 [[sites]]
 name = "Eshan Ramesh"
+description = "Fun lisp blog"
 url = "https://esrh.me"
-tags = ["Blog", "Lisp", "Personal", "Programming"]
+tags = ["Blog", "Lisp", "Programming"]
 
 [[sites]]
 name = "Frtv"
 url = "https://ftrv.se"
-tags =  ["Blog", "Personal", "Plan 9"]
+tags =  ["Blog", "Plan 9"]
 
 [[sites]]
 name = "Download Free Kromer"
 url = "https://kromercoin.com"
-description = "Stupid Spamton-themed website from Neocities"
+description = "Spamton-themed Neocities site."
 tags = ["Art"]
 
 [[sites]]
 name = "Lainchan"
 url = "https://lainchan.org"
-description = "Lain-themed imageboard"
+description = "Lain-themed imageboard."
 tags = ["Social", "DIY", "Lisp", "Programming"]
 
 [[sites]]
 name = "Landchad"
 url = "https://landchad.net"
 description = "Minimal self-hosting articles. Very high quality."
-tags = ["Blog", "Unix"]
+tags = ["Unix"]
 
 [[sites]]
 name = "Luke Smith"
 url = "https://lukesmith.xyz"
-description = "Luke Smith's website. Very complete content"
+description = "Luke Smith's website - high quality video rants and blog posts."
 tags = ["Blog", "Personal", "Unix", "Videos"]
 
 [[sites]]
@@ -92,77 +82,77 @@ tags = ["Unix", "Plan 9"]
 [[sites]]
 name = "NOPENOPENOPE"
 url = "https://nopenopenope.net"
-tags = ["Music", "Personal", "Plan 9"]
+tags = ["Music", "Blog", "Plan 9"]
 
 [[sites]]
 name = "news.olano.dev"
 url = "https://news.olano.dev"
-description = "News feed from different blogs"
+description = "News feed from different blogs."
 tags = ["Blog", "Programming"]
 
 [[sites]]
 name = "Nic Olas"
 url = "https://nic-olas.me"
-description = "Luke Smith's evil clone (does Lisp and Emacs)"
+description = "Luke Smith's evil clone (does Lisp and Emacs)."
 tags = ["Lisp", "Programming", "Unix", "Videos"]
 
 [[sites]]
 name = "Nowhere"
 url = "https://nowhere.moe"
-description = "An internet corner"
+description = "An internet corner."
 tags = ["Social", "Privacy", "Psychology"]
 
 [[sites]]
 name = "Torpus"
 url = "https://torpus.info"
-description = "Weeb blog on psychology and our technological dystopia"
-tags = ["Blog", "Personal", "Psychology"]
+description = "Weeb blog on psychology and our technological dystopia."
+tags = ["Blog", "Psychology"]
 
 [[sites]]
 name = "Orib"
 url = "https://orib.dev"
-description = "Golang programming blog"
+description = "Golang programming blog."
 tags = ["Programming"]
 
 [[sites]]
 name = "Pepper & Carrot"
 url = "https://peppercarrot.com"
-description = "Free and open source webcomic"
+description = "Free and open source webcomic."
 tags = ["Art"]
 
 [[sites]]
 name = "Plan 9 Wiki"
 url = "https://plan9.io/wiki/plan9"
-description = "Plan 9's official wiki"
+description = "Plan 9's official wiki."
 tags = ["Plan 9"]
 
 [[sites]]
 name = "Sebastiano Tronto"
 url = "https://sebastiano.tronto.net"
-tags = ["Blog", "Personal", "Programming", "Unix"]
+tags = ["Blog", "Programming", "Unix"]
 
 [[sites]]
 name = "Spyware Watchdog"
 url = "https://spyware.neocities.org"
-description = "Articles on spyware analysis"
+description = "Articles on spyware analysis."
 tags = ["Social", "Privacy", "Search Engine"]
 
 [[sites]]
 name = "Suckless"
 url = "https://suckless.org"
-description = "Free software organization"
+description = "Free software organization."
 tags = ["Unix"]
 
 [[sites]]
 name = "Wiby"
 url = "https://wiby.me"
-description = "Retro search engine"
+description = "Retro search engine."
 tags = ["Search engine"]
 
 [[sites]]
 name = "Wired-7"
 url = "https://wired-7.org"
-description = "Retrofuturistic spanish imageboard"
+description = "Cyberpunk hispanic imageboard."
 tags = ["Social"]
 
 [[sites]]
@@ -174,13 +164,13 @@ tags = ["Plan 9"]
 [[sites]]
 name = "9lab"
 url = "https://9lab.org/blog/plan9"
-description = "Plan 9 blog"
-tags = ["Personal", "Plan 9"]
+description = "Plan 9 blog."
+tags = ["Blog", "Plan 9"]
 
 [[sites]]
 name = "Niliara.net"
 url = "https://niliara.net"
-description = "My site"
+description = "My site."
 
 [[sites]]
 name = "Dig Deeper"
@@ -190,37 +180,69 @@ tags = ["Psychology", "Unix", "Privacy"]
 [[sites]]
 name = "Merveilles"
 url = "https://merveilles.town"
+description = "Mastodon instance (hosting AnalogNowhere and Devine Lu Linvega)."
 tags = ["Social"]
 
 [[sites]]
 name = "Lainzine"
 url = "https://lainzine.org/"
+description = "Cyberpunk magazine based themed on Serial Experiments Lain."
 tags = ["DIY"]
 
 [[sites]]
 name = "The Lantern Darknet Project"
 url = "http://lantern6vrwheap4iahuktz3jtwvovrzhxgwgzvrvp46brdzzekxibqd.onion/"
-description = "Self-hosted darknet search engine"
+description = "Self-hosted darknet search engine."
 tags = ["Search Engine", "Privacy"]
 
 [[sites]]
 name = "Dan-Simon Myrlands personal blog space"
 url = "https://pspodcasting.net/dan/blog/index.html"
-description = "Author of the Plan 9 Desktop User Guide"
-tags = ["Personal", "Unix", "Plan 9"]
+description = "Author of the Plan 9 Desktop User Guide."
+tags = ["Blog", "Unix", "Plan 9"]
 
 [[sites]]
 name = "Michdev"
 url = "https://michdev.nekoweb.org/"
-tags = ["Personal"]
+description = "Terminal-like designed website."
+tags = ["Art"]
 
 [[sites]]
 name = "Neocities.org"
 url = "https://neocities.org/"
+description = "Home of the indie web. Host your personal homepage for free!"
 tags = ["Art", "Search Engine"]
 
 [[sites]]
 name = "Nekoweb.org"
 url = "https://nekoweb.org/"
-description = "I heard it's like Neocities but better!"
+description = "I heard it's like Neocities but better."
 tags = ["Art", "Search Engine"]
+
+[[sites]]
+name = "cock.li"
+url = "https://cock.li"
+description = "It's email with cocks!"
+tags = ["Social"]
+
+[[sites]]
+name = "Dangerous opinions"
+url = "https://dangeru.us/"
+description = "Cyberpunk-themed social media page inspired on Va-11 Hall-a."
+tags = ["Social"]
+
+[[sites]]
+name = "Devine Lu Linvega"
+url = "https://wiki.xxiivv.com/"
+description = "Creator of UXN and a lot of cool nerdy projects!"
+tags = ["Art", "Programming"]
+
+[[sites]]
+name = "100 Rabbits"
+url = "100r.co"
+description = "Organization of hackers and artists, home of UXN."
+
+[[sites]]
+name = "Cyberia Comuputer Club"
+url = "https://cyberia.club/"
+description = "A kind and amazing hacker collective centered in Minnesota with global friends."
