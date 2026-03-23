@@ -40,18 +40,15 @@
       [:color fg]
       [:.url
        [:color fg-url]]
-      [:.description
-       [:color fg-comment]]
-      [".result:hover"
+      # [:.description
+      #  [:color fg-comment]]
+      [:.tag
        [:background-color bg-base]
-       [:text-decoration "none"]
-       [:.name
-        [:text-decoration "underline"]]]
-      [".result:focus"
+       [:border-color fg]]
+      [".result.focused"
        [:background-color bg-base]
-       [:text-decoration "none"]
-       [:.name
-        [:text-decoration "underline"]]]]
+       [:.tag
+        [:background-color bg]]]]
 
      [:form
       [:input
@@ -102,6 +99,13 @@
    [:margin "3em auto"]
    [:margin-bottom "1em"]])
 
+(def- subtitle
+  [:.subtitle
+   [:margin-top "3em"]
+   [:text-align "center"]
+   [:p
+    [:margin "0.6em"]]])
+
 (def- form
   [:form
    [:width "fit-content"]
@@ -143,14 +147,22 @@
    [:.name
     [:margin "0"]
     [:font-size "1.3em"]
-    [:font-weight "bold"]
-    [:text-decoration "none"]]
+    [:font-weight "bold"]]
 
    [:.url
+    [:margin 0]
     [:margin-bottom "0.4em"]]
 
-   [:p
-    [:margin "0em 0"]]])
+   [:.description
+    [:margin "0.6em 0"]]
+
+   [:.tag
+    [:font-size "0.8em"]
+    [:text-align "center"]
+    [:padding "0.4em"]
+    [:display "inline-block"]
+    [:margin-right "0.8em"]
+    [:margin-bottom "1em"]]])
 
 (def- main
   [:main
@@ -166,6 +178,7 @@
    ;(colors)
    links
    title
+   subtitle
    main
    title-search
    form

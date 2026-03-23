@@ -19,14 +19,19 @@ function focusCurrent() {
     }
 
     current = searchResults[currentId]
-    current.focus()
+    let name = current.getElementsByClassName("name")[0]
+    if (name) {
+        name.focus()
+        current.classList.add("focused")
+    }
 }
 
 function unfocus() {
-    searchBar.focus()
-    searchBar.blur()
-    searchBar.blur()
-    searchBar.blur()
+    current.classList.remove("focused")
+    if (document.activeElement() != searchBar) {
+        searchBar.focus()
+    }
+
     searchBar.blur()
 }
 
@@ -50,6 +55,9 @@ function move(step) {
         }
     }
 
+    if (current) {
+        current.classList.remove("focused")
+    }
     focusCurrent()
 }
 

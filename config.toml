@@ -1,11 +1,16 @@
 title = "Citadel"
+description = "Self-hosted mini search engine"
+source = "https://github.com/niljimeno/citadel-janet"
 theme = "lantern"
+
 
 [[items]]
 name = "Niliara.net"
 url = "https://niliara.net"
 description = "Example description"
+tags = ["plan9"]
 
 [[items]]
 name = "NOPENOPENOPE"
 url = "http://nopenopenope.net/"
+tags = ["plan9", "music"]

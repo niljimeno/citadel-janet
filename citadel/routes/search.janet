@@ -1,17 +1,27 @@
 (import "../templates/html")
 (import "../db")
 
+(defn- tag
+  [t]
+  [:a {:class "tag"
+       :href (string "/search?tag=" t)}
+   t])
+
 (defn- result-block
   [result]
-  [:a {:class "result"
-       :href (get result :url)}
-   [:h3 {:class "name"}
-        (get result :name)]
-   [:p {:class "url"} (get result :url)]
-   [:p {:class "description"} (get result :description)]
-   # [:span {:class "tags"} (-> (get result :tags)
-   #                        (string/join ", "))]
-   ])
+  (let [url (get result :url)
+        name (get result :name)
+        description (get result :description)
+        tags (get result :tags)]
+    [:div {:class "result"}
+     [:a {:class "name"
+          :href url}
+       name]
+     [:p {:class "url"} url]
+     [:p {:class "description"} description]
+     ;(map tag (or tags
+                   []))
+     ]))
 
 (defn- page
   [results]
@@ -26,6 +36,9 @@
 
 (defn route
   [req path]
-  (-> (get-in req [:query "q"])
-      db/search
-      page))
+  (let [tag (get-in req [:query "tag"])
+        query (or tag (get-in req [:query "q"]))]
+    (print tag)
+    (-> query
+        (db/search tag)
+        page)))
