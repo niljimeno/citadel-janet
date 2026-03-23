@@ -67,7 +67,7 @@ tags = ["Unix"]
 name = "Luke Smith"
 url = "https://lukesmith.xyz"
 description = "Luke Smith's website - high quality video rants and blog posts."
-tags = ["Blog", "Personal", "Unix", "Videos"]
+tags = ["Blog", "Personal", "Unix", "Videos", "Privacy"]
 
 [[sites]]
 name = "Max Bernstein"
@@ -220,10 +220,10 @@ description = "I heard it's like Neocities but better."
 tags = ["Art", "Search Engine"]
 
 [[sites]]
-name = "cock.li"
+name = "Cock.li"
 url = "https://cock.li"
 description = "It's email with cocks!"
-tags = ["Social"]
+tags = ["Social", "Privacy"]
 
 [[sites]]
 name = "Dangerous opinions"
@@ -239,10 +239,12 @@ tags = ["Art", "Programming"]
 
 [[sites]]
 name = "100 Rabbits"
-url = "100r.co"
+url = "https://100r.co"
 description = "Organization of hackers and artists, home of UXN."
+tags = ["Art", "Programming"]
 
 [[sites]]
 name = "Cyberia Comuputer Club"
 url = "https://cyberia.club/"
 description = "A kind and amazing hacker collective centered in Minnesota with global friends."
+tags = ["Social"]
