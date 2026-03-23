@@ -24,21 +24,27 @@
      ]))
 
 (defn- page
-  [results]
+  [results data]
   (print "Got to results")
-  [:html {:lang "en"}
-   (html/head)
-   [:body
-    [:main
-     (html/title-search)
-     [:div {:class "results"}
-      ;(map result-block results)]]]])
+  (let [tag (get data :tag)
+        query (get data :query)]
+    [:html {:lang "en"}
+     (html/head)
+     [:body
+      [:main
+       (html/title-search (if (not tag) query))
+       [:div {:class "results"}
+        (let [alert (if tag (string `Filtering by "` tag `"`)
+                            (if (empty? results) "No results"))]
+          (and alert [:p {:class "alert"} alert]))
+        ;(map result-block results)]]]]))
 
 (defn route
   [req path]
   (let [tag (get-in req [:query "tag"])
-        query (or tag (get-in req [:query "q"]))]
+        query (or tag (get-in req [:query "q"]))
+        data {:tag tag :query query}]
     (print tag)
     (-> query
         (db/search tag)
-        page)))
+        (page data))))

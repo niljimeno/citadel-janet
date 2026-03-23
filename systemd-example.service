@@ -1,0 +1,10 @@
+[Unit]
+Description=Citadel
+
+[Service]
+ExecStart=/path/to/executable
+Restart=always
+WorkingDirectory=/path/to/config/files
+
+[Install]
+WantedBy=multi-user.target

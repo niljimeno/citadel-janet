@@ -5,12 +5,233 @@ theme = "lantern"
 
 
 [[items]]
-name = "Niliara.net"
-url = "https://niliara.net"
-description = "Example description"
-tags = ["plan9"]
+name = "AnalogNowhere"
+url = "https://analognowhere.com"
+description = "Unix-themed fan-fiction"
+tags = ["Art", "Unix", "Plan 9"]
+
+[[items]]
+name = "Based Cooking"
+url = "https://based.cooking"
+description = "Cooking site that doesn't suck"
+tags = ["Cooking"]
+
+[[items]]
+name = "Cat-v.org"
+url = "https://cat-v.org"
+description = "Random Contrarian Insurgent Organization"
+tags = ["Unix", "Plan 9"]
+
+[[items]]
+name = "Cidoku"
+url = "https://cidoku.net"
+description = "Retro personal webpage"
+tags = ["Art", "Flash", "Music", "Personal"]
+
+[[items]]
+name = "Dan's website"
+url = "https://pspodcasting.net/dan"
+tags = ["Art", "Unix", "Personal", "Plan 9"]
+
+[[items]]
+name = "Eric S. Raymond's Website"
+url = "https://catb.org/~esr"
+description = "Eric S. Raymond's personal site"
+tags = ["Blog", "Personal", "Unix"]
+
+[[items]]
+name = "Erlang University"
+url = "https://erlang.org/course"
+description = "Official Erlang introduction course"
+tags = ["Programming"]
+
+[[items]]
+name = "Eshan Ramesh"
+url = "https://esrh.me"
+tags = ["Blog", "Lisp", "Personal", "Programming"]
+
+[[items]]
+name = "Frtv"
+url = "https://ftrv.se"
+tags =  ["Blog", "Personal", "Plan 9"]
+
+[[items]]
+name = "Download Free Kromer"
+url = "https://kromercoin.com"
+description = "Stupid Spamton-themed website from Neocities"
+tags = ["Entertainment", "Personal"]
+
+[[items]]
+name = "Lainchan"
+url = "https://lainchan.org"
+description = "Lain-themed imageboard"
+tags = ["Social", "DIY", "Lisp", "Programming"]
+
+[[items]]
+name = "Landchad"
+url = "https://landchad.net"
+description = "Minimal self-hosting articles. Very high quality."
+tags = ["Blog", "Unix"]
+
+[[items]]
+name = "Luke Smith"
+url = "https://lukesmith.xyz"
+description = "Luke Smith's website. Very complete content"
+tags = ["Blog", "Personal", "Unix", "Videos"]
+
+[[items]]
+name = "Max Bernstein"
+url = "https://bernsteinbear.com"
+tags = ["Blog", "Lisp", "Personal", "Programming"]
+
+[[items]]
+name = "Nein"
+url = "https://nein.triapul.cz"
+tags = ["Unix", "Plan 9"]
 
 [[items]]
 name = "NOPENOPENOPE"
-url = "http://nopenopenope.net/"
-tags = ["plan9", "music"]
+url = "https://nopenopenope.net"
+description = "Personal site. 9front affiliate."
+tags = ["Music", "Personal", "Plan 9"]
+
+[[items]]
+name = "news.olano.dev"
+url = "https://news.olano.dev"
+description = "News feed from different blogs"
+tags = ["Blog", "Programming"]
+
+[[items]]
+name = "Nic Olas"
+url = "https://nic-olas.me"
+description = "Luke Smith's evil clone (does Lisp and Emacs)"
+tags = ["Lisp", "Programming", "Unix", "Videos"]
+
+[[items]]
+name = "Nowhere"
+url = "https://nowhere.moe"
+description = "An internet corner"
+tags = ["Social", "Privacy", "Psychology"]
+
+[[items]]
+name = "Torpus"
+url = "https://torpus.info"
+description = "Weeb blog on psychology and our technological dystopia"
+tags = ["Blog", "Personal", "Psychology"]
+
+[[items]]
+name = "Orib"
+url = "https://orib.dev"
+description = "Golang programming blog"
+tags = ["Programming"]
+
+[[items]]
+name = "Pepper & Carrot"
+url = "https://peppercarrot.com"
+description = "Free and open source webcomic"
+tags = ["Art"]
+
+[[items]]
+name = "Plan 9 Wiki"
+url = "https://plan9.io/wiki/plan9"
+description = "Plan 9's official wiki"
+tags = ["Plan 9"]
+
+[[items]]
+name = "Sebastiano Tronto"
+url = "https://sebastiano.tronto.net"
+tags = ["Blog", "Personal", "Programming", "Unix"]
+
+[[items]]
+name = "Spyware Watchdog"
+url = "https://spyware.neocities.org"
+description = "Articles on spyware analysis"
+tags = ["Social", "Privacy", "Search Engine"]
+
+[[items]]
+name = "Suckless"
+url = "https://suckless.org"
+description = "Free software organization"
+tags = ["Unix"]
+
+[[items]]
+name = "Wiby"
+url = "https://wiby.me"
+description = "Retro search engine"
+tags = ["Search engine"]
+
+[[items]]
+name = "Wired-7"
+url = "https://wired-7.org"
+description = "Retrofuturistic spanish imageboard"
+tags = ["Social"]
+
+[[items]]
+name = "9front"
+url = "https://9front.org"
+description = "The plan fell off. Join the revolution front."
+tags = ["Plan 9"]
+
+[[items]]
+name = "9lab"
+url = "https://9lab.org/blog/plan9"
+description = "Plan 9 blog"
+tags = ["Personal", "Plan 9"]
+
+[[items]]
+name = "Niliara.net"
+url = "https://niliara.net"
+description = "My site"
+
+[[items]]
+name = "Dig Deeper"
+url = "https://digdeeper.club/"
+tags = ["Psychology", "Unix", "Privacy"]
+
+[[items]]
+name = "Merveilles"
+url = "https://merveilles.town"
+tags = ["Social"]
+
+[[items]]
+name = "Lainzine"
+url = "https://lainzine.org/"
+tags = ["DIY"]
+
+[[items]]
+name = "The Lantern Darknet Project"
+url = "http://lantern6vrwheap4iahuktz3jtwvovrzhxgwgzvrvp46brdzzekxibqd.onion/"
+description = "Self-hosted darknet search engine"
+tags = ["Search Engine", "Privacy"]
+
+[[items]]
+name = "Peter's website"
+url = "https://pmikkelsen.com/"
+tags = ["Personal", "Unix", "Plan 9"]
+
+[[items]]
+name = "Dan-Simon Myrlands personal blog space"
+url = "https://pspodcasting.net/dan/blog/index.html"
+description = "Author of the Plan 9 Desktop User Guide"
+tags = ["Personal", "Unix", "Plan 9"]
+
+[[items]]
+name = "Irreal"
+url = "https://irreal.org/blog/"
+tags = ["Lisp"]
+
+[[items]]
+name = "Michdev"
+url = "https://michdev.nekoweb.org/"
+tags = ["Personal"]
+
+[[items]]
+name = "Neocities.org"
+url = "https://neocities.org/"
+tags = ["Art", "Search Engine"]
+
+[[items]]
+name = "Nekoweb.org"
+url = "https://nekoweb.org/"
+description = "I heard it's like Neocities but better!"
+tags = ["Art", "Search Engine"]

@@ -1,4 +1,5 @@
 all:
+	jpm deps
 	jpm build
 
 run:

@@ -12,20 +12,21 @@
    [:title title]])
 
 (defn search-form
-  []
+  [&opt query]
   [:form {:method "get"
           :action "/search"
           :accept-charset "utf-8"}
    [:input {:id "search"
             :type "text"
             :placeholder "search"
+            :value query
             :name "q"}]
    [:input {:type "submit"
             :value "search"}]])
 
 (defn title-search
-  []
+  [query]
   [:div {:class "title-search"}
    [:a {:href "/"}
     [:h1 (get db/data :title)]]
-   (search-form)])
+   (search-form query)])

@@ -38,10 +38,10 @@
 
      [:.results
       [:color fg]
+      [:.alert
+       [:color fg-comment]]
       [:.url
        [:color fg-url]]
-      # [:.description
-      #  [:color fg-comment]]
       [:.tag
        [:background-color bg-base]
        [:border-color fg]]
@@ -66,6 +66,7 @@
      [:margin "1em"]
      [:display "flex"]
      [:justify-content "center"]
+     [:flex-wrap "wrap"]
 
      [:.separator
       [:user-select "none"]
@@ -137,8 +138,11 @@
 
 (def- results
   [:.results
-   [:width "600px"]
+   [:width "700px"]
    [:max-width "90%"]
+
+   [:.alert
+    [:padding "0 3em"]]
 
    [:.result
     [:display "block"]

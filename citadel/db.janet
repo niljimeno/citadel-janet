@@ -6,21 +6,22 @@
 
 (defn- load-tags
   []
-  (->> (reduce
+  (->> (get data :items)
+       (map |(or (get $ :tags) []))
+       (map (partial map string/ascii-lower))
+       (reduce
         (fn [l x]
           @[;l
             ;(filter
               (fn [x] (not (has-value? l x)))
-              (or (get x :tags) []))])
-        @[]
-        (get data :items))
+              x)])
+        @[])
        (sort)
        (set tags)))
 
 (defn- compare
   [pattern item tagsearch]
   (default pattern "")
-  (map print (get item :tags))
 
   (any?
    (if tagsearch
