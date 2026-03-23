@@ -45,6 +45,10 @@
       [:.tag
        [:background-color bg-base]
        [:border-color fg]]
+      [".result:hover"
+       [:background-color bg-base]
+       [:.tag
+        [:background-color bg]]]
       [".result.focused"
        [:background-color bg-base]
        [:.tag

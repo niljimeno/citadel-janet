@@ -4,233 +4,232 @@ source = "https://github.com/niljimeno/citadel-janet"
 theme = "lantern"
 
 
-[[items]]
+[[sites]]
 name = "AnalogNowhere"
 url = "https://analognowhere.com"
 description = "Unix-themed fan-fiction"
 tags = ["Art", "Unix", "Plan 9"]
 
-[[items]]
+[[sites]]
 name = "Based Cooking"
 url = "https://based.cooking"
 description = "Cooking site that doesn't suck"
 tags = ["Cooking"]
 
-[[items]]
+[[sites]]
 name = "Cat-v.org"
 url = "https://cat-v.org"
 description = "Random Contrarian Insurgent Organization"
 tags = ["Unix", "Plan 9"]
 
-[[items]]
+[[sites]]
 name = "Cidoku"
 url = "https://cidoku.net"
 description = "Retro personal webpage"
 tags = ["Art", "Flash", "Music", "Personal"]
 
-[[items]]
+[[sites]]
 name = "Dan's website"
 url = "https://pspodcasting.net/dan"
-tags = ["Art", "Unix", "Personal", "Plan 9"]
+tags = ["Art", "Unix", "Plan 9"]
 
-[[items]]
+[[sites]]
 name = "Eric S. Raymond's Website"
 url = "https://catb.org/~esr"
 description = "Eric S. Raymond's personal site"
-tags = ["Blog", "Personal", "Unix"]
+tags = ["Blog", "Unix"]
 
-[[items]]
+[[sites]]
 name = "Erlang University"
 url = "https://erlang.org/course"
 description = "Official Erlang introduction course"
 tags = ["Programming"]
 
-[[items]]
+[[sites]]
 name = "Eshan Ramesh"
 url = "https://esrh.me"
 tags = ["Blog", "Lisp", "Personal", "Programming"]
 
-[[items]]
+[[sites]]
 name = "Frtv"
 url = "https://ftrv.se"
 tags =  ["Blog", "Personal", "Plan 9"]
 
-[[items]]
+[[sites]]
 name = "Download Free Kromer"
 url = "https://kromercoin.com"
 description = "Stupid Spamton-themed website from Neocities"
-tags = ["Entertainment", "Personal"]
+tags = ["Entertainment"]
 
-[[items]]
+[[sites]]
 name = "Lainchan"
 url = "https://lainchan.org"
 description = "Lain-themed imageboard"
 tags = ["Social", "DIY", "Lisp", "Programming"]
 
-[[items]]
+[[sites]]
 name = "Landchad"
 url = "https://landchad.net"
 description = "Minimal self-hosting articles. Very high quality."
 tags = ["Blog", "Unix"]
 
-[[items]]
+[[sites]]
 name = "Luke Smith"
 url = "https://lukesmith.xyz"
 description = "Luke Smith's website. Very complete content"
 tags = ["Blog", "Personal", "Unix", "Videos"]
 
-[[items]]
+[[sites]]
 name = "Max Bernstein"
 url = "https://bernsteinbear.com"
 tags = ["Blog", "Lisp", "Personal", "Programming"]
 
-[[items]]
+[[sites]]
 name = "Nein"
 url = "https://nein.triapul.cz"
 tags = ["Unix", "Plan 9"]
 
-[[items]]
+[[sites]]
 name = "NOPENOPENOPE"
 url = "https://nopenopenope.net"
-description = "Personal site. 9front affiliate."
 tags = ["Music", "Personal", "Plan 9"]
 
-[[items]]
+[[sites]]
 name = "news.olano.dev"
 url = "https://news.olano.dev"
 description = "News feed from different blogs"
 tags = ["Blog", "Programming"]
 
-[[items]]
+[[sites]]
 name = "Nic Olas"
 url = "https://nic-olas.me"
 description = "Luke Smith's evil clone (does Lisp and Emacs)"
 tags = ["Lisp", "Programming", "Unix", "Videos"]
 
-[[items]]
+[[sites]]
 name = "Nowhere"
 url = "https://nowhere.moe"
 description = "An internet corner"
 tags = ["Social", "Privacy", "Psychology"]
 
-[[items]]
+[[sites]]
 name = "Torpus"
 url = "https://torpus.info"
 description = "Weeb blog on psychology and our technological dystopia"
 tags = ["Blog", "Personal", "Psychology"]
 
-[[items]]
+[[sites]]
 name = "Orib"
 url = "https://orib.dev"
 description = "Golang programming blog"
 tags = ["Programming"]
 
-[[items]]
+[[sites]]
 name = "Pepper & Carrot"
 url = "https://peppercarrot.com"
 description = "Free and open source webcomic"
 tags = ["Art"]
 
-[[items]]
+[[sites]]
 name = "Plan 9 Wiki"
 url = "https://plan9.io/wiki/plan9"
 description = "Plan 9's official wiki"
 tags = ["Plan 9"]
 
-[[items]]
+[[sites]]
 name = "Sebastiano Tronto"
 url = "https://sebastiano.tronto.net"
 tags = ["Blog", "Personal", "Programming", "Unix"]
 
-[[items]]
+[[sites]]
 name = "Spyware Watchdog"
 url = "https://spyware.neocities.org"
 description = "Articles on spyware analysis"
 tags = ["Social", "Privacy", "Search Engine"]
 
-[[items]]
+[[sites]]
 name = "Suckless"
 url = "https://suckless.org"
 description = "Free software organization"
 tags = ["Unix"]
 
-[[items]]
+[[sites]]
 name = "Wiby"
 url = "https://wiby.me"
 description = "Retro search engine"
 tags = ["Search engine"]
 
-[[items]]
+[[sites]]
 name = "Wired-7"
 url = "https://wired-7.org"
 description = "Retrofuturistic spanish imageboard"
 tags = ["Social"]
 
-[[items]]
+[[sites]]
 name = "9front"
 url = "https://9front.org"
 description = "The plan fell off. Join the revolution front."
 tags = ["Plan 9"]
 
-[[items]]
+[[sites]]
 name = "9lab"
 url = "https://9lab.org/blog/plan9"
 description = "Plan 9 blog"
 tags = ["Personal", "Plan 9"]
 
-[[items]]
+[[sites]]
 name = "Niliara.net"
 url = "https://niliara.net"
 description = "My site"
 
-[[items]]
+[[sites]]
 name = "Dig Deeper"
 url = "https://digdeeper.club/"
 tags = ["Psychology", "Unix", "Privacy"]
 
-[[items]]
+[[sites]]
 name = "Merveilles"
 url = "https://merveilles.town"
 tags = ["Social"]
 
-[[items]]
+[[sites]]
 name = "Lainzine"
 url = "https://lainzine.org/"
 tags = ["DIY"]
 
-[[items]]
+[[sites]]
 name = "The Lantern Darknet Project"
 url = "http://lantern6vrwheap4iahuktz3jtwvovrzhxgwgzvrvp46brdzzekxibqd.onion/"
 description = "Self-hosted darknet search engine"
 tags = ["Search Engine", "Privacy"]
 
-[[items]]
+[[sites]]
 name = "Peter's website"
 url = "https://pmikkelsen.com/"
-tags = ["Personal", "Unix", "Plan 9"]
+tags = ["Unix", "Plan 9"]
 
-[[items]]
+[[sites]]
 name = "Dan-Simon Myrlands personal blog space"
 url = "https://pspodcasting.net/dan/blog/index.html"
 description = "Author of the Plan 9 Desktop User Guide"
 tags = ["Personal", "Unix", "Plan 9"]
 
-[[items]]
+[[sites]]
 name = "Irreal"
 url = "https://irreal.org/blog/"
 tags = ["Lisp"]
 
-[[items]]
+[[sites]]
 name = "Michdev"
 url = "https://michdev.nekoweb.org/"
 tags = ["Personal"]
 
-[[items]]
+[[sites]]
 name = "Neocities.org"
 url = "https://neocities.org/"
 tags = ["Art", "Search Engine"]
 
-[[items]]
+[[sites]]
 name = "Nekoweb.org"
 url = "https://nekoweb.org/"
 description = "I heard it's like Neocities but better!"

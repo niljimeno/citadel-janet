@@ -6,7 +6,7 @@
 
 (defn- load-tags
   []
-  (->> (get data :items)
+  (->> (get data :sites)
        (map |(or (get $ :tags) []))
        (map (partial map string/ascii-lower))
        (reduce
@@ -20,7 +20,7 @@
        (set tags)))
 
 (defn- compare
-  [pattern item tagsearch]
+  [pattern site tagsearch]
   (default pattern "")
 
   (any?
@@ -29,21 +29,21 @@
             (string/find
              ;(map string/ascii-lower
                    [pattern tag])))
-          (or (get item :tags) []))
+          (or (get site :tags) []))
      (map (fn [value]
             (string/find
              ;(map string/ascii-lower
-                   [pattern (get item value)])))
+                   [pattern (get site value)])))
           [:name :url]))))
 
 (defn search
   [pattern tagsearch]
   (default pattern "")
   (print pattern "and" tagsearch ".")
-  (let [items (get data :items)]
+  (let [sites (get data :sites)]
     (->> (if (and pattern (-> pattern empty? not))
-           (filter |(compare pattern $ tagsearch) items)
-           items))))
+           (filter |(compare pattern $ tagsearch) sites)
+           sites))))
 
 (defn setup
   []
