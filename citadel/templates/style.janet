@@ -144,6 +144,7 @@
   [:.results
    [:width "700px"]
    [:max-width "90%"]
+   [:margin-bottom "20%"]
 
    [:.alert
     [:padding "0 3em"]]
