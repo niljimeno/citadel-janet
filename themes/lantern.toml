@@ -1,12 +1,10 @@
-# bg = "#0c0810"
 bg = "#231830"
-bg-base = "#000"
+bg-base = "#0b0610"
 
 fg = "white"
 fg-comment = "#aaaaaa"
 fg-comment-b = "#666666"
 fg-colored = "#e0a0ff"
-# fg-colored = "#e0a0ff"
 fg-highlight = "#ffff22"
 fg-highlight-b = "#ff6666"
 fg-name = "#ffff66"
