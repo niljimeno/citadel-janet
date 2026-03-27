@@ -29,6 +29,12 @@
      [:p description]
      (and source [:b [:a {:href (get db/data :source)} "source"]])]))
 
+(defn- banner
+  []
+  [:a {:href "https://citadel.niliara.net"}
+   [:img {:class "banner"
+          :src "/banner.png"}]])
+
 
 (defn- page
   []
@@ -38,7 +44,8 @@
     (links)
     (title)
     (html/search-form)
-    (subtitle)]])
+    (subtitle)
+    (banner)]])
 
 (defn route
   [req path]

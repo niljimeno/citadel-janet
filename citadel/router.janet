@@ -16,34 +16,26 @@
   (httpf/add-route server route "" nil fun
                    ;(if mime [nil mime] [])))
 
-(defn- icon
+(defn- asset
   [src &]
   (slurp (string "assets/" src)))
 
 (def resources
-  {"citadel.png" (icon "citadel.png")
-   "showall.webp" (icon "showall.webp")
-   "search.svg" (icon "search.svg")
+  {"citadel.png" (asset "citadel.png")
+   "showall.webp" (asset "showall.webp")
+   "search.svg" (asset "search.svg")
+   "banner.png" (asset "banner.png")
    "vim.js" (slurp "js/vim.js")})
 
 
-(defn add-sprite
-  [server name]
+(defn add-file
+  [server name mime]
   (print (string "/" name))
   (print (string "assets/" name))
   (add-route server
              (string "/" name)
              (fn [_ &] (get resources name))
-             :mime "image/png"))
-
-(defn add-vector
-  [server name]
-  (print (string "/" name))
-  (print (string "assets/" name))
-  (add-route server
-             (string "/" name)
-             (fn [_ &] (get resources name))
-             :mime "image/svg+xml"))
+             :mime mime))
 
 (defn start
   []
@@ -54,7 +46,8 @@
       (add-route "/vim.js"
                  (fn [_ &] (get resources "vim.js"))
                  :mime "application/javascript")
-      (add-sprite "citadel.png")
-      (add-sprite "showall.webp")
-      (add-vector "search.svg")
+      (add-file "banner.png" "image/png")
+      (add-file "citadel.png" "image/png")
+      (add-file "showall.webp" "image/webp")
+      (add-file "search.svg" "image/svg+xml")
       (httpf/listen "0.0.0.0" "8080")))

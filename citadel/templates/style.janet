@@ -123,6 +123,11 @@
    [:p
     [:margin "0.6em"]]])
 
+(def- banner
+  [:.banner
+   [:display "block"]
+   [:margin "5em auto"]])
+
 (def- form
   [:form
    [:width "fit-content"]
@@ -207,6 +212,7 @@
    links
    title
    subtitle
+   banner
    main
    title-search
    form
