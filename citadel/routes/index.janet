@@ -27,7 +27,7 @@
         source (get db/data :source)]
     [:div {:class "subtitle"}
      [:p description]
-     (and source [:a {:href (get db/data :source)} "source"])]))
+     (and source [:b [:a {:href (get db/data :source)} "source"]])]))
 
 
 (defn- page

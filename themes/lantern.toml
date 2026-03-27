@@ -4,6 +4,7 @@ bg-base = "#000"
 
 fg = "white"
 fg-comment = "#aaaaaa"
+fg-comment-b = "#666666"
 fg-colored = "#e0a0ff"
 # fg-colored = "#e0a0ff"
 fg-highlight = "#ffff22"

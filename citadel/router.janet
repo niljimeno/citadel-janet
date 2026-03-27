@@ -3,8 +3,6 @@
 (import "./templates/html")
 (import "./routes/search" :as route-search)
 (import "./routes/index" :as route-index)
-# (import "./routes/read" :as route-read)
-# (import "./routes/add" :as route-add)
 
 (defn style
   "Style route"
@@ -25,6 +23,7 @@
 (def resources
   {"citadel.png" (icon "citadel.png")
    "showall.webp" (icon "showall.webp")
+   "search.svg" (icon "search.svg")
    "vim.js" (slurp "js/vim.js")})
 
 
@@ -37,6 +36,15 @@
              (fn [_ &] (get resources name))
              :mime "image/png"))
 
+(defn add-vector
+  [server name]
+  (print (string "/" name))
+  (print (string "assets/" name))
+  (add-route server
+             (string "/" name)
+             (fn [_ &] (get resources name))
+             :mime "image/svg+xml"))
+
 (defn start
   []
   (-> (httpf/server)
@@ -48,4 +56,5 @@
                  :mime "application/javascript")
       (add-sprite "citadel.png")
       (add-sprite "showall.webp")
+      (add-vector "search.svg")
       (httpf/listen "0.0.0.0" "8080")))

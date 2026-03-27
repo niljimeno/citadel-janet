@@ -15,6 +15,7 @@
         bg-base (get db/theme :bg-base)
         fg (get db/theme :fg)
         fg-comment (get db/theme :fg-comment)
+        fg-comment-b (get db/theme :fg-comment-b)
         fg-colored (get db/theme :fg-colored)
         fg-highlight (get db/theme :fg-highlight)
         fg-highlight-b (get db/theme :fg-highlight-b)
@@ -57,7 +58,18 @@
      [:form
       [:input
        [:background-color bg-base]
-       [:color fg]]]
+       [:color fg]
+       [:border-top-color fg-comment-b]
+       [:border-left-color fg-comment-b]
+       [:border-bottom-color fg-comment]
+       [:border-right-color fg-comment]]
+      ["input:hover"
+       [:border-top-color fg-comment]
+       [:border-left-color fg-comment]
+       [:border-bottom-color fg]
+       [:border-right-color fg]]
+      ["input[type=image]"
+       [:color "#797979"]]]
      [:.links
       [:.showall
        [:color fg-highlight-b]]
@@ -115,17 +127,24 @@
   [:form
    [:width "fit-content"]
    [:margin "0 auto"]
+   [:display "flex"]
+   [:align-items "center"]
 
    [:input
-    [:display "inline-block"]]
+    [:display "inline-block"]
+    [:height "2em"]
+    [:padding "0.2em"]
+    [:box-sizing "border-box"]]
    # ["input:focus"
    #  [:outline "0"]]
    ["input[type=text]"
     [:width "20em"]
-    [:height "2em"]
-    [:padding "0.2em"]]
-   ["input[type=submit]"
-    [:display "none"]]])
+    [:border "none"]]
+   ["input[type=image]"
+    [:border-style "solid"]
+    [:border-width "2px"]
+    [:width "3em"]]
+   ])
 
 (def- title-search
   [:.title-search

@@ -7,7 +7,7 @@
    [:link {:rel "stylesheet"
            :href "style.css"}]
    [:link {:rel "icon"
-           :href "./citadel.png"}]
+           :href "/citadel.png"}]
    [:script {:src "/vim.js"}]
    [:title title]])
 
@@ -21,8 +21,11 @@
             :placeholder "search"
             :value query
             :name "q"}]
-   [:input {:type "submit"
-            :value "search"}]])
+   # [:input {:type "submit"
+   #          :value "search"}]
+   [:input {:type "image"
+            :src "/search.svg"}]
+   ])
 
 (defn title-search
   [query]
