@@ -137,19 +137,17 @@
 
    [:input
     [:display "inline-block"]
-    [:height "2em"]
+    [:height "27"]
     [:padding "0.2em"]
     [:box-sizing "border-box"]]
-   # ["input:focus"
-   #  [:outline "0"]]
    ["input[type=text]"
     [:width "20em"]
-    [:border "none"]]
+    [:border-style "solid"]
+    [:border-width "2px"]]
    ["input[type=image]"
     [:border-style "solid"]
     [:border-width "2px"]
-    [:width "3em"]]
-   ])
+    [:width "3em"]]])
 
 (def- title-search
   [:.title-search
