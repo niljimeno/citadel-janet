@@ -1,25 +1,10 @@
 (import "../templates/html")
 (import "../db")
 
-(defn- links
-  []
-  [:nav {:class "links"}
-   (map (fn [x]
-          [:div
-           [:a {:href (string "/search?tag=" x)
-                :class "link"}
-            [:span x]]
-           [:span {:class "separator"} "/"]])
-        db/tags)
-   [:a {:href "/search" :class "link showall"}
-    [:div {:class "inline-image"}
-     [:img {:src "/showall.webp"}]]
-    [:span "show all"]]])
-
 (defn- title
   []
   [:div {:class "title"}
-   [:a {:href "/"} (get db/data :title)]])
+   [:a {:href "/"} [:h1 (get db/data :title)]]])
 
 (defn- subtitle
   []
@@ -41,11 +26,11 @@
   [:html {:lang "en"}
    (html/head)
    [:body
-    (links)
-    (title)
-    (html/search-form)
-    (subtitle)
-    (banner)]])
+    (html/links)
+    [:main
+     (html/title)
+     (subtitle)
+     (banner)]]])
 
 (defn route
   [req path]

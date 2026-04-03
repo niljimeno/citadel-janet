@@ -13,6 +13,7 @@
   []
   (let [bg (get db/theme :bg)
         bg-base (get db/theme :bg-base)
+        bg-alt (get db/theme :bg-alt)
         fg (get db/theme :fg)
         fg-comment (get db/theme :fg-comment)
         fg-comment-b (get db/theme :fg-comment-b)
@@ -40,22 +41,26 @@
      [:.results
       [:color fg]
       [:.alert
-       [:color fg-comment]]
+       [:color fg-comment]
+       [:text-align "center"]]
       [:.url
        [:color fg-url]]
       [:.tag
        [:background-color bg-base]
        [:border-color fg]]
+      [:.result
+       [:background-color bg-alt]
+       [:border-color fg-comment-b]]
       [".result:hover"
-       [:background-color bg-base]
-       [:.tag
-        [:background-color bg]]]
+       [:background-color bg]]
       [".result.focused"
-       [:background-color bg-base]
-       [:.tag
-        [:background-color bg]]]]
+       [:background-color bg]]]
 
      [:form
+      [:align-content "center"]
+      [:margin "0"]
+      [:margin-bottom "2em"]
+
       [:input
        [:background-color bg-base]
        [:color fg]
@@ -68,13 +73,24 @@
        [:border-left-color fg-comment]
        [:border-bottom-color fg]
        [:border-right-color fg]]
-      ["input[type=image]"
-       [:color "#797979"]]]
+      [:button
+       [:background-color bg-base]
+       [:color fg]
+       [:border-top-color fg-comment-b]
+       [:border-left-color fg-comment-b]
+       [:border-bottom-color fg-comment]
+       [:border-right-color fg-comment]]
+      ["button:hover"
+       [:border-top-color fg-comment]
+       [:border-left-color fg-comment]
+       [:border-bottom-color fg]
+       [:border-right-color fg]
+       [:cursor "pointer"]]
      [:.links
       [:.showall
        [:color fg-highlight-b]]
       [".showall:hover"
-       [:text-decoration "underline"]]]]))
+       [:text-decoration "underline"]]]]]))
 
 (def- links
   (let [links-height "2em"]
@@ -105,16 +121,17 @@
 
 (def- title
   [:.title
-   [:display "flex"]
-   [:justify-content "center"]
+   [:width "100%"]
 
-   [:a
+   [:h1
     [:font-size "4em"]
-    [:text-align "center"]
-    [:font-weight "bold"]]
+    [:font-weight "bold"]
+    [:margin-bottom "0.2em"]
+    [:text-align "center"]]
 
-   [:margin "3em auto"]
-   [:margin-bottom "1em"]])
+   [:.search
+    [:width "100%"]
+    [:gap "2em"]]])
 
 (def- subtitle
   [:.subtitle
@@ -130,24 +147,25 @@
 
 (def- form
   [:form
-   [:width "fit-content"]
-   [:margin "0 auto"]
-   [:display "flex"]
-   [:align-items "center"]
+   [:display "grid"]
+   [:grid-template-columns "auto 60px"]
+   [:width "100%"]
 
    [:input
     [:display "inline-block"]
-    [:height "27"]
+    [:height "40px"]
     [:padding "0.2em"]
-    [:box-sizing "border-box"]]
+    [:box-sizing "border-box"]
+    [:width "100%"]]
    ["input[type=text]"
-    [:width "20em"]
-    [:border-style "solid"]
-    [:border-width "2px"]]
-   ["input[type=image]"
     [:border-style "solid"]
     [:border-width "2px"]
-    [:width "3em"]]])
+    [:padding "0 1em"]
+    [:font-size "1em"]]
+   [:button
+    [:border-style "solid"]
+    [:border-width "2px"]
+    [:border-radius 0]]])
 
 (def- title-search
   [:.title-search
@@ -155,25 +173,23 @@
    [:flex-wrap "nowrap"]
    [:gap "2em"]
 
-   [:form
-    [:align-content "center"]
-    [:margin "0"]]
-
    [:h1
     [:margin "0.4em"]]])
 
 (def- results
   [:.results
-   [:width "700px"]
-   [:max-width "90%"]
-   [:margin-bottom "20%"]
+   [:width "100%"]
+   [:margin-bottom "50%"]
 
    [:.alert
-    [:padding "0 3em"]]
+    [:padding "0 1em"]]
 
    [:.result
     [:display "block"]
-    [:padding "1em 3em"]]
+    [:padding "1em 3em"]
+    [:margin "1em 0"]
+    [:border-style "solid"]
+    [:border-width "2px"]]
 
    [:.name
     [:margin "0"]
@@ -192,14 +208,13 @@
     [:text-align "center"]
     [:padding "0.4em"]
     [:display "inline-block"]
-    [:margin-right "0.8em"]
-    [:margin-bottom "1em"]]])
+    [:margin-right "0.8em"]]])
 
 (def- main
   [:main
-   [:width "900px"]
+   [:width "700px"]
    [:max-width "100%"]
-   [:margin "0 auto"]])
+   [:margin "4em auto"]])
 
 (defn css
   "CSS content"
@@ -212,6 +227,5 @@
    subtitle
    banner
    main
-   title-search
    form
    results))

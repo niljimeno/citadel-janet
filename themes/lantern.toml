@@ -1,5 +1,6 @@
 bg = "#231830"
 bg-base = "#0b0610"
+bg-alt = "#2a1d40"
 
 fg = "white"
 fg-comment = "#aaaaaa"

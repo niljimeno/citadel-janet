@@ -31,8 +31,10 @@
     [:html {:lang "en"}
      (html/head)
      [:body
+      (html/links)
       [:main
-       (html/title-search (if (not tag) query))
+       # (html/title-search (if (not tag) query))
+       (html/title)
        [:div {:class "results"}
         (let [alert (if tag (string `Filtering by "` tag `"`)
                             (if (empty? results) "No results"))]
