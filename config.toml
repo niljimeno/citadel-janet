@@ -67,12 +67,12 @@ tags = ["Unix"]
 name = "Luke Smith"
 url = "https://lukesmith.xyz"
 description = "Luke Smith's website - high quality video rants and blog posts."
-tags = ["Blog", "Personal", "Unix", "Videos", "Privacy"]
+tags = ["Blog", "Unix", "Videos", "Privacy"]
 
 [[sites]]
 name = "Max Bernstein"
 url = "https://bernsteinbear.com"
-tags = ["Blog", "Lisp", "Personal", "Programming"]
+tags = ["Blog", "Lisp", "Programming"]
 
 [[sites]]
 name = "Nein"
