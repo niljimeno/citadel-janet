@@ -30,7 +30,8 @@
     [:main
      (html/title)
      (subtitle)
-     (banner)]]])
+     # (banner)
+     ]]])
 
 (defn route
   [req path]

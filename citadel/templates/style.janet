@@ -213,7 +213,7 @@
 (def- main
   [:main
    [:width "700px"]
-   [:max-width "100%"]
+   [:max-width "95%"]
    [:margin "4em auto"]])
 
 (defn css

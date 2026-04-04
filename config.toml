@@ -248,3 +248,9 @@ name = "Cyberia Comuputer Club"
 url = "https://cyberia.club/"
 description = "A kind and amazing hacker collective centered in Minnesota with global friends."
 tags = ["Social"]
+
+[[sites]]
+name = "nadeko.net"
+url = "https://nadeko.net/"
+description = "Privacy-focused services"
+tags = ["Privacy"]

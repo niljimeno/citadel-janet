@@ -9,6 +9,8 @@
    [:link {:rel "icon"
            :href "/citadel.png"}]
    [:script {:src "/vim.js"}]
+   [:meta {:name "viewport"
+           :content "width=device-width,initial-scale=1"}]
    [:title title]])
 
 (def lens
